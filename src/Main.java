@@ -36,36 +36,19 @@ public class Main {
 
         Dev devJucelio = new Dev();
         devJucelio.setNome("Jucelio");
+
         devJucelio.increverNoBootcamp(bootcampJava);
-        System.out.println("Conteudos inscritos:" + devJucelio.getConteudosInscritos());
+
+       System.out.println("Conteudos inscritos:" + devJucelio.getConteudosInscritos());
         System.out.println("XP:"+devJucelio.calcularTotalXP());
         System.out.println("Conteudos concluidos:" + devJucelio.getConteudosConcluidos());
 
-        devJucelio.progredir();
         devJucelio.progredir();
         devJucelio.progredir();
 
         System.out.println("Conteudos inscritos:" + devJucelio.getConteudosInscritos());
         System.out.println("Conteudos concluidos de Jucelio:" + devJucelio.getConteudosConcluidos());
         System.out.println("XP:"+devJucelio.calcularTotalXP());
-
-
-
-
-
-
-//        Dev devCamila = new Dev();
-//        devCamila.setNome("Camila");
-//        devCamila.increverNoBootcamp(bootcampJava);
-//        System.out.println("Conteudos inscritos:" + devCamila.getConteudosInscritos());
-//        System.out.println("Conteudos concluidos:" + devCamila.getConteudosConcluidos());
-
-
-
-
-
-
-
 
     }
 }

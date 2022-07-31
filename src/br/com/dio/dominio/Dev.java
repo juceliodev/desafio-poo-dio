@@ -11,27 +11,29 @@ public class Dev {
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<Conteudo>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<Conteudo>();
 
-    public void increverNoBootcamp(Bootcamp bootcamp){
+    public void increverNoBootcamp(Bootcamp bootcamp) {
         bootcamp.getDevsInscritos().add(this);
-        this.conteudosInscritos.addAll(bootcamp.getConteudosBootcamp());
+        if (bootcamp != null) {
+            this.conteudosInscritos.addAll(bootcamp.getConteudosBootcamp());
+        }
     }
 
-    public void progredir(){
+    public void progredir() {
 
         Optional<Conteudo> conteudos = conteudosInscritos.stream().findFirst();
 
-        if (conteudos.isPresent()){
+        if (conteudos.isPresent()) {
             conteudosConcluidos.add(conteudos.get());
             this.conteudosInscritos.remove(conteudos.get());
-        }else{
+        } else {
             System.err.println("Voce nao esta matriculado em nenhum Conteudo!");
         }
     }
 
-    public double calcularTotalXP(){
+    public double calcularTotalXP() {
         return this.conteudosConcluidos
                 .stream()
-               // .mapToDouble(conteudo->conteudo.calcularXP())
+                // .mapToDouble(conteudo->conteudo.calcularXP())
                 .mapToDouble(Conteudo::calcularXP)
                 .sum();
     }
